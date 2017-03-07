@@ -21,6 +21,8 @@
 
 		<!-- Header -->
 		<header id="header">
+			<div id="submit-success" class="alert alert-success" role="alert">Message sent 留言已发送</div>>
+			<div id="submit-error" class="alert alert-danger" role="alert">Error in sending message. Please try again. 留言无法发送，请再尝试</div>
 			<h1>Ching Hing Kang</h1>
 			<h1 class="chinese">曾庆昌</h1>
 			<br>
@@ -170,10 +172,10 @@
 
 		<section id="contact">
 			<h2>Contact Me 联系我</h2>
-			<form method="post" action="https://formspree.io/chinghingkang@gmail.com">
+			<form id="contactform">
 				<div class="field">
 					<label for="name">Name 姓名</label>
-					<input type="text" name="name" id="name" />
+					<input type="text" name="name" id="name" required/>
 				</div>
 				<div class="field">
 					<label for="phone">Phone 电话</label>
@@ -181,12 +183,14 @@
 				</div>
 				<div class="field">
 					<label for="email">Email 电邮箱</label>
-					<input type="email" name="_replyto" id="email" />
+					<input type="email" name="_replyto" id="email" required/>
 				</div>
 				<div class="field">
 					<label for="message">Message 留言</label>
-					<textarea name="message" id="message" rows="5"></textarea>
+					<textarea name="message" id="message" rows="5" required></textarea>
 				</div>
+				<input type="hidden" name="_subject" value="Website contact" />
+				<input type="text" name="_gotcha" style="display:none" />
 				<ul class="actions">
 					<li><input type="submit" value="Send 发送"></li>
 					<!--<li><a href="" class="button submit">Send Message</a></li>-->
@@ -207,9 +211,35 @@
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/jquery.validate.min.js"></script>
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<!--<script src="assets/js/smooth-scroll.min.js"></script>-->
 	<script src="assets/js/main.js"></script>
+
+	<script>
+		$("#contactform").validate({
+			submitHandler: function (form) {
+				$.ajax({
+					url: "https://formspree.io/chinghingkang" + "@" + "gmail" + "." + "com",
+					method: "POST",
+					data: {
+						name: $(form).find("input[name='name']").val(),
+						phone: $(form).find("input[name='phone']").val(),
+						_replyto: $(form).find("input[name='_replyto']").val(),
+						message: $(form).find("textarea[name='message']").val()
+					},
+					dataType: "json",
+					success: function () {
+						$("#submit-success").fadeIn();
+						$("#contactform").fadeOut();
+					},
+					error: function () {
+						$("#submit-error").fadeIn();
+					}
+				});
+			}
+		});
+	</script>
 
 	<!--<script>
 		smoothScroll.init();
