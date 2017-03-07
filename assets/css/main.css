@@ -746,12 +746,13 @@ body.is-loading-1 #main {
 /* Header */
 
 #header {
-	padding: 3em 2.25em 1.75em 2.25em;
+	padding: 2.25em 2.25em 1.75em 2.25em;
 }
 
 #header h1 {
 	font-size: 2.25em;
 	font-weight: 700;
+	margin-top: 1rem;
 	margin-bottom: 0;
 }
 
@@ -765,7 +766,12 @@ body.is-loading-1 #main {
 }
 
 #header a[href="#contact"] {
+	color: #ccc;
 	border: none;
+}
+
+#header a[href="#contact"]:hover {
+	color: #00D3B7;
 }
 
 
@@ -1173,6 +1179,29 @@ body.is-loading-2 #viewer .slide {
 }
 
 
+/* Alerts */
+
+.alert {
+	padding: 10px 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	text-align: left;
+}
+
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.alert-danger {
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
+
+
 /*a[ id="contact"]:target ~ #contact {
 	-webkit-transform: translateY( -500px);
 	transform: translateY( -500px);
@@ -1196,12 +1225,6 @@ body.is-loading-2 #viewer .slide {
 
 
 /* Form errors */
-
-
-/*input.error, textarea.error {
-	border: red groove thin;
-	border-radius: 4px;
-}*/
 
 input[type="text"].error, input[type="password"].error, input[type="tel"].error, input[type="email"].error, select.error, textarea.error {
 	border-color: red;
