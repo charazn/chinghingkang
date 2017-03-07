@@ -174,19 +174,19 @@
 			<h2>Contact Me 联系我</h2>
 			<form id="contactform">
 				<div class="field">
-					<label for="name">Name 姓名</label>
+					<label for="name">Name 姓名 *&nbsp;</label>
 					<input type="text" name="name" id="name" required/>
 				</div>
 				<div class="field">
-					<label for="phone">Phone 电话</label>
+					<label for="phone">Phone 电话&nbsp;</label>
 					<input type="tel" name="phone" id="phone" />
 				</div>
 				<div class="field">
-					<label for="email">Email 电邮箱</label>
+					<label for="email">Email 电邮箱 *&nbsp;</label>
 					<input type="email" name="_replyto" id="email" required/>
 				</div>
 				<div class="field">
-					<label for="message">Message 留言</label>
+					<label for="message">Message 留言 *&nbsp;</label>
 					<textarea name="message" id="message" rows="5" required></textarea>
 				</div>
 				<input type="hidden" name="_subject" value="Website contact" />
@@ -211,7 +211,7 @@
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/jquery.validate.min.js"></script>
+	<script src="assets/js/jquery.validate.js"></script>
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<!--<script src="assets/js/smooth-scroll.min.js"></script>-->
 	<script src="assets/js/main.js"></script>
@@ -221,6 +221,15 @@
 		$("#submit-error").hide();
 
 		$("#contactform").validate({
+			// invalidHandler: function (event, validator) {
+			// 	var errors = validator.numberOfInvalids();
+			// 	if (errors) {
+			// 		$(".asterisk").css("color", "red");
+			// 	}
+			// },
+			errorPlacement: function (error, element) {
+				error.appendTo(element.prev());
+			},
 			submitHandler: function (form) {
 				$.ajax({
 					url: "https://formspree.io/chinghingkang" + "@" + "gmail" + "." + "com",

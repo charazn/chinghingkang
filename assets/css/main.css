@@ -1195,20 +1195,28 @@ body.is-loading-2 #viewer .slide {
 }
 
 
-/*Bootstrap .show .hidden .invisible Classes*/
+/* Form errors */
 
 
-/*.show {
-	display: block !important;
-}
-
-.hidden {
-	display: none !important;
-}
-
-.invisible {
-	visibility: hidden;
+/*input.error, textarea.error {
+	border: red groove thin;
+	border-radius: 4px;
 }*/
+
+input[type="text"].error, input[type="password"].error, input[type="tel"].error, input[type="email"].error, select.error, textarea.error {
+	border-color: red;
+}
+
+input[type="text"].error:focus, input[type="password"].error:focus, input[type="tel"].error:focus, input[type="email"].error:focus, select.error:focus, textarea.error:focus {
+	border-color: red;
+}
+
+#name-error, #email-error, #message-error {
+	/*display: none !important;*/
+	display: inline;
+	color: red;
+	font-size: 0.8rem;
+}
 
 
 /*
