@@ -1197,7 +1197,8 @@ body.is-loading-2 #viewer .slide {
 
 /*Bootstrap .show .hidden .invisible Classes*/
 
-.show {
+
+/*.show {
 	display: block !important;
 }
 
@@ -1207,7 +1208,7 @@ body.is-loading-2 #viewer .slide {
 
 .invisible {
 	visibility: hidden;
-}
+}*/
 
 
 /*

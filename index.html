@@ -217,6 +217,9 @@
 	<script src="assets/js/main.js"></script>
 
 	<script>
+		$("#submit-success").hide();
+		$("#submit-erro").hide();
+
 		$("#contactform").validate({
 			submitHandler: function (form) {
 				$.ajax({
@@ -231,7 +234,7 @@
 					dataType: "json",
 					success: function () {
 						$("#submit-success").fadeIn();
-						$("#contactform").fadeOut();
+						$("#contact").fadeOut();
 					},
 					error: function () {
 						$("#submit-error").fadeIn();
