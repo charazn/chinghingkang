@@ -1195,6 +1195,21 @@ body.is-loading-2 #viewer .slide {
 }
 
 
+/*Bootstrap .show .hidden .invisible Classes*/
+
+.show {
+	display: block !important;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+
 /*
 .panel {
 	width: 100%;
