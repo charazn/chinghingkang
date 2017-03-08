@@ -1,5 +1,7 @@
 @import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+
+/*@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");*/
+
 
 /*
 	Lens by HTML5 UP
@@ -116,7 +118,7 @@ body {
 }
 
 body, input, select, textarea {
-	font-family: "Roboto", Helvetica, sans-serif;
+	font-family: Garamond, "Times New Roman", Times, Helvetica, sans-serif;
 	font-weight: 400;
 	line-height: 1.65;
 	font-size: 1em;
@@ -1179,6 +1181,13 @@ body.is-loading-2 #viewer .slide {
 }
 
 
+/* Chinese fonts */
+
+.chinese {
+	font-family: "KaiTi", "NSimSun", "SimSun", "FangSong", "STKaiti", "STSong", "STFangsong";
+}
+
+
 /* Alerts */
 
 .alert {
@@ -1221,6 +1230,13 @@ body.is-loading-2 #viewer .slide {
 #contact h2 {
 	margin-top: 1.5rem;
 	font-size: 1.5rem;
+}
+
+
+/* Form */
+
+#contact, #contactform ul li input {
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 
