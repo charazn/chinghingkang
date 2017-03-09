@@ -752,17 +752,18 @@ body.is-loading-1 #main {
 }
 
 #header h1 {
-	font-size: 2.25em;
+	font-size: 1.75em;
 	font-weight: 700;
 	margin-top: 1rem;
 	margin-bottom: 0;
 }
 
 #header h1.chinese {
-	font-size: 4em;
+	font-size: 2.75em;
 }
 
 #header p {
+	font-size: 1.2em;
 	margin-bottom: 0;
 	color: #888888;
 }
@@ -1255,6 +1256,51 @@ input[type="text"].error:focus, input[type="password"].error:focus, input[type="
 	display: inline;
 	color: red;
 	font-size: 0.8rem;
+}
+
+@media screen and (max-width: 420px) {
+	/* header */
+	#header h1 {
+		font-size: 2em;
+	}
+	#header h1.chinese {
+		font-size: 3em;
+	}
+	#header p {
+		font-size: 1.4em;
+	}
+	#header span.label.icon.fa-envelope-o, #header span.chinese {
+		font-size: 1.2em;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	/* header */
+	#header h1 {
+		font-size: 1.8em;
+	}
+	#header h1.chinese {
+		font-size: 2.75em;
+	}
+	#header p {
+		font-size: 1.3em;
+	}
+	#header span.label.icon.fa-envelope-o, #header span.chinese {
+		font-size: 1.1em;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	/* header */
+	#header h1 {
+		font-size: 1.6em;
+	}
+	#header h1.chinese {
+		font-size: 2.55em;
+	}
+	#header span.label.icon.fa-envelope-o, #header span.chinese {
+		font-size: 1em;
+	}
 }
 
 
